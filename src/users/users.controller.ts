@@ -1,14 +1,10 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
 
 @Controller('users')  //this is like the parent route to handle /user request
 export class UsersController {
-    /*
-    DELETE /users/:id
-    */
 
-    @Get()      // GET /ussers
-    findAll() {
-        // return ['daniel', 'Emmanuel', 'Bobai', 'Isaac']
+    @Get()      // GET /ussers  or /users?role=value
+    findAll(@Query('role') role?: 'INTERN' | 'ENGINEER' | 'ADMIN') {
         return []
     }
 
