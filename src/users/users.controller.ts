@@ -1,4 +1,16 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
-@Controller('users')
-export class UsersController {}
+@Controller('users')  //this is like the parent route to handle /user request
+export class UsersController {
+    /*
+    POST /users
+    PATCH /users/:id
+    DELETE /users/:id
+    */
+
+    @Get()      // GET /ussers
+    findAll() {
+        return []
+    }
+
+}
