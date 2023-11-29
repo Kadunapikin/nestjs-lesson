@@ -13,4 +13,11 @@ export class UsersController {
         return []
     }
 
+    @Get(':id')    // GET /users/:id
+    findOne(@Param('id') id: string) {
+        return { id }
+    }
+
+
+
 }
