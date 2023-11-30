@@ -23,8 +23,8 @@ export class UsersController {
     }
 
     @Post() //     POST /users
-    create(@Body() user: {}) {
-        return user
+    create(@Body() user: { name: string, email: string, role: 'INTERN' | 'ENGINEER' | 'ADMIN' }) {
+        return this.usersService.create(user)
     } 
 
     @Patch(':id')    // PATCH /users/:id
