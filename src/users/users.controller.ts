@@ -8,7 +8,7 @@ export class UsersController {
 
     @Get()      // GET /ussers  or /users?role=value
     findAll(@Query('role') role?: 'INTERN' | 'ENGINEER' | 'ADMIN') {
-        return []
+        return this.usersService.findAll(role)
     }
 
     //any route before the params route will be seein as an id thats why is very important to put all routes before the params route
