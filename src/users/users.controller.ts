@@ -19,7 +19,7 @@ export class UsersController {
 
     @Get(':id')    // GET /users/:id
     findOne(@Param('id') id: string) {
-        return { id }
+        return this.usersService.findOne(+id)
     }
 
     @Post() //     POST /users
