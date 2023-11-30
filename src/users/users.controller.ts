@@ -1,7 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Query } from '@nestjs/common';
+import { UsersService } from './users.service';
 
 @Controller('users')  //this is like the parent route to handle /user request
 export class UsersController {
+
+    constructor(private readonly usersService: UsersService) {}
 
     @Get()      // GET /ussers  or /users?role=value
     findAll(@Query('role') role?: 'INTERN' | 'ENGINEER' | 'ADMIN') {
